@@ -237,8 +237,9 @@ There are 3 useful lifecycle hooks available. All of them have corresponding int
 Occasionally, you may want to have a direct access to the native, **platform-specific** server instance. The reference to this object is passed as an argument to the `afterInit()` method (`OnGatewayInit` interface). Another option is to use the `@WebSocketServer()` decorator.
 
 ```typescript
+// The type of 'server' property is 'Namespace' from 'socket.io' by default. not 'Server' in 'socket.io'.
 @WebSocketServer()
-server: Server;
+server: Namespace;
 ```
 
 > warning **Notice** The `@WebSocketServer()` decorator is imported from the `@nestjs/websockets` package.
